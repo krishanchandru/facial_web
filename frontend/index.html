@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Facial Authentication System</h1>
+
+    <!-- Login Page -->
+    <div id="login-page" class="container">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+        <button onclick="login()">Login</button>
+        <p id="status"></p>
+        <p>Don't have an account? <a href="#" onclick="showRegisterPage()">Register</a></p>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="container" style="display: none;">
+        <h2>Register</h2>
+        <input type="email" id="register-email" placeholder="Email">
+        <input type="password" id="register-password" placeholder="Password">
+        <video id="register-video" autoplay></video>
+        <canvas id="register-canvas"></canvas>
+        <button onclick="register()">Register</button>
+        <p id="register-status"></p>
+        <p>Already have an account? <a href="#" onclick="showLoginPage()">Login</a></p>
+    </div>
+
+    <!-- Registration Success Page -->
+    <div id="register-success-page" class="container" style="display: none;">
+        <h2>Registration Successful!</h2>
+        <p>Your account has been created successfully.</p>
+        <button onclick="showLoginPage()">Login to Continue</button>
+    </div>
+
+    <!-- Login Success Page -->
+    <div id="login-success-page" class="container" style="display: none;">
+        <h2>Login Successful!</h2>
+        <p>Welcome back!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
